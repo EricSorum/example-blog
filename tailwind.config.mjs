@@ -97,6 +97,9 @@ const config = {
         sans: ['var(--font-figtree)', 'system-ui', 'sans-serif'],
         mono: ['ui-monospace', 'SFMono-Regular', 'monospace'],
       },
+      fontSize: {
+        base: ['1.2rem', { lineHeight: '1.4' }],
+      },
       keyframes: {
         'accordion-down': {
           from: { height: '0' },
