@@ -31,12 +31,12 @@ export const ArchiveBlock: React.FC<
       depth: 1,
       limit,
       // Add this to populate heroImage
-      populate: {
-        heroImage: true,
-        meta: {
-          image: true,
-        },
-      },
+      // populate: {
+      //   heroImage: true,
+      //   meta: {
+      //     image: true,
+      //   },
+      // },
       ...(flattenedCategories && flattenedCategories.length > 0
         ? {
             where: {
