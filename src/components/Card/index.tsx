@@ -41,9 +41,11 @@ export const Card: React.FC<{
       )}
       ref={card.ref}
     >
-      <div className="relative w-full ">
+      <div className="relative w-full aspect-[16/9] overflow-hidden">
         {!displayImage && <div className="">No image</div>}
-        {displayImage && typeof displayImage !== 'string' && <Media resource={displayImage} size="33vw" />}
+        {displayImage && typeof displayImage !== 'string' && (
+          <Media resource={displayImage} fill imgClassName="object-cover" />
+        )}
       </div>
       <div className="p-4">
         {showCategories && hasCategories && (
