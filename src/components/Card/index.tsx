@@ -2,9 +2,11 @@
 import { cn } from '@/utilities/ui'
 import useClickableCard from '@/utilities/useClickableCard'
 import Link from 'next/link'
-import React, { Fragment } from 'react'
+import React, { Fragment, useRef } from 'react'
 
 import type { Post } from '@/payload-types'
+
+import { useIsVisible } from '@/utilities/useIsVisible'
 
 import { Media } from '@/components/Media'
 
@@ -33,11 +35,15 @@ export const Card: React.FC<{
   // Use heroImage as primary, fallback to meta.image
   const displayImage = heroImage || metaImage
 
+  const isVisible = useIsVisible(card.ref)
+
   return (
     <article
       className={cn(
-        'border border-border rounded-lg overflow-hidden bg-card hover:cursor-pointer animate-fadeUp',
+        'border border-border rounded-lg overflow-hidden bg-card hover:cursor-pointer',
         className,
+        'transform transition-all ease-in-out duration-700',
+        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-[10px]',
       )}
       ref={card.ref}
     >
