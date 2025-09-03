@@ -47,7 +47,7 @@ export const Card: React.FC<{
       <div className="relative w-full aspect-[16/9] overflow-hidden">
         {!displayImage && <div className="">No image</div>}
         {displayImage && typeof displayImage !== 'string' && (
-          <Media resource={displayImage} fill imgClassName="object-cover" />
+          <Media resource={displayImage} fill imgClassName="object-cover relative" />
         )}
       </div>
       <div className="p-4">
