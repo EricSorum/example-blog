@@ -8,7 +8,7 @@ import { CMSLink } from '@/components/Link'
 import { Media } from '@/components/Media'
 import RichText from '@/components/RichText'
 import { cn } from '@/utilities/ui'
-import { useIsVisible } from '@/utilities/useIsVisible'
+import { useFadeUp } from '@/utilities/fadeUp'
 
 export const UltraImpactHero: React.FC<Page['hero']> = ({ links, media, richText }) => {
   const { setHeaderTheme } = useHeaderTheme()
@@ -18,7 +18,7 @@ export const UltraImpactHero: React.FC<Page['hero']> = ({ links, media, richText
   })
 
   const mainText = useRef<HTMLDivElement | null>(null)
-  const isVisible = useIsVisible(mainText)
+  const fadeClasses = useFadeUp(mainText)
 
   return (
     <div
@@ -26,14 +26,7 @@ export const UltraImpactHero: React.FC<Page['hero']> = ({ links, media, richText
       data-theme="dark"
     >
       <div className="container mb-8 z-10 relative flex items-center justify-center">
-        <div
-          ref={mainText}
-          className={cn(
-            'max-w-[36.5rem] md:text-center',
-            'transform transition-all ease-in-out duration-700',
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-[10px]',
-          )}
-        >
+        <div ref={mainText} className={cn('max-w-[36.5rem] md:text-center', fadeClasses)}>
           {richText && <RichText className="mb-6" data={richText} enableGutter={false} />}
           {Array.isArray(links) && links.length > 0 && (
             <ul className="flex md:justify-center gap-4">
