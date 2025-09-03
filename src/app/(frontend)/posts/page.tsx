@@ -21,12 +21,13 @@ export default async function Page() {
     overrideAccess: false,
     select: {
       title: true,
+      heroImage: true,
       slug: true,
       categories: true,
       meta: true,
     },
   })
-
+  // console.log('page posts ' + posts[0])
   return (
     <div className="pt-24 pb-24">
       <PageClient />
