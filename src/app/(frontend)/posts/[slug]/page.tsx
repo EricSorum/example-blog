@@ -92,6 +92,7 @@ const queryPostBySlug = cache(async ({ slug }: { slug: string }) => {
     limit: 1,
     overrideAccess: draft,
     pagination: false,
+    depth: 1,
     where: {
       slug: {
         equals: slug,
@@ -99,5 +100,19 @@ const queryPostBySlug = cache(async ({ slug }: { slug: string }) => {
     },
   })
 
-  return result.docs?.[0] || null
+  const post = result.docs?.[0] || null
+  if (!post) return null
+
+  // Need to add relatedPosts separately to include heroImage
+  if (post.relatedPosts && post.relatedPosts.length > 0) {
+    const relatedPostIds = post.relatedPosts.map((p: any) => p.id)
+    const relatedResult = await payload.find({
+      collection: 'posts',
+      where: { id: { in: relatedPostIds } },
+      depth: 1,
+    })
+    post.relatedPosts = relatedResult.docs
+  }
+
+  return post
 })
