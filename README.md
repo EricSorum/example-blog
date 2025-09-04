@@ -1,5 +1,9 @@
 # FreeSlate Template
 
+FreeSlate is a blog template built with Payload CMS
+
+Prototype available to view here: https://vercel.com/eric-sorums-projects/example-blog
+
 ## Why FreeSlate?
 Because FreeSlate builds with code that’s free - free to use and free from limitations.  FreeSlate offers simplicity and affordability alongside limitless future potential.  When you build with this tech, you will have code that will belong to you and can be endlessly used and customized.
 
