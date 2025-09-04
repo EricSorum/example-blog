@@ -99,17 +99,4 @@ export default buildConfig({
     },
     tasks: [],
   },
-  email: nodemailerAdapter({
-    defaultFromAddress: 'ejsorum@gmail.com',
-    defaultFromName: 'FreeSlate',
-    // Any Nodemailer transport
-    transportOptions: {
-      host: process.env.SMTP_HOST,
-      port: 587,
-      auth: {
-        user: process.env.SMTP_USER,
-        pass: process.env.SMTP_PASS,
-      },
-    },
-  }),
 })

@@ -27,7 +27,6 @@
     "@neondatabase/serverless": "^1.0.1",
     "@payloadcms/admin-bar": "3.49.0",
     "@payloadcms/db-vercel-postgres": "3.49.0",
-    "@payloadcms/email-nodemailer": "^3.49.0",
     "@payloadcms/live-preview-react": "3.49.0",
     "@payloadcms/next": "3.49.0",
     "@payloadcms/payload-cloud": "3.49.0",
