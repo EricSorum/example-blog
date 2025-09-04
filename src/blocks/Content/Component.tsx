@@ -1,10 +1,14 @@
+'use client'
+
 import { cn } from '@/utilities/ui'
-import React from 'react'
+import React, { useRef } from 'react'
 import RichText from '@/components/RichText'
 
 import type { ContentBlock as ContentBlockProps } from '@/payload-types'
 
 import { CMSLink } from '../../components/Link'
+
+import { useFadeUp } from '@/utilities/fadeUp'
 
 export const ContentBlock: React.FC<ContentBlockProps> = (props) => {
   const { columns } = props
@@ -15,6 +19,8 @@ export const ContentBlock: React.FC<ContentBlockProps> = (props) => {
     oneThird: '4',
     twoThirds: '8',
   }
+  const columnCard = useRef<HTMLDivElement | null>(null)
+  const fadeClasses = useFadeUp(columnCard)
 
   return (
     <div className="container my-16 max-w-[80%] mx-auto">
@@ -28,8 +34,10 @@ export const ContentBlock: React.FC<ContentBlockProps> = (props) => {
               <div
                 className={cn(`col-span-4 lg:col-span-${colsSpanClasses[size!]}`, {
                   'md:col-span-2 bg-card p-4 border-border border rounded': size !== 'full',
+                  fadeClasses,
                 })}
                 key={index}
+                ref={columnCard}
               >
                 {richText && <RichText data={richText} enableGutter={false} />}
 
