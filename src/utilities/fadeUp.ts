@@ -6,6 +6,6 @@ export function useFadeUp(ref: React.RefObject<HTMLElement | null>) {
 
   return cn(
     'transform transition-all ease-in-out duration-700',
-    isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-[10px]',
+    isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-[15px]',
   )
 }
