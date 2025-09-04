@@ -27,7 +27,7 @@ export const ContentBlock: React.FC<ContentBlockProps> = (props) => {
             return (
               <div
                 className={cn(`col-span-4 lg:col-span-${colsSpanClasses[size!]}`, {
-                  'md:col-span-2': size !== 'full',
+                  'md:col-span-2 bg-card p-4 border-border border rounded': size !== 'full',
                 })}
                 key={index}
               >
