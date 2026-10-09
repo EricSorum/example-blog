@@ -31,7 +31,7 @@ If you need to get a simple site up, using a builder may be quick and convenient
 • Impossible to upgrade to a better server or CDN
 
 ## Build for the Future
-The FreeSlate blog template was created by Eric Sorum out of a desire to offer the latest advancements in development to everyone who wants a website.  
+The FreeSlate blog template was created by Eric Sorum out of a desire to offer the latest advancements in development to everyone who wants a website.
 
 As a developer, Eric loves working with React.js and TypeScript, and choosing tools built on these was a natural choice.  By adding Next.js for the backend and Tailwind for style, FreeSlate is built on modern standards of development.  FreeSlate brings these together with Payload CMS to build a blog site using the most modern and reliable practices.  The entire codebase is owned by you and can be engineered by anyone familiar with today's web tech.
 
